@@ -21,8 +21,9 @@ namespace AzureFunctionAppDemo
             ILogger log)
         {
             List<Certifications> _lst = new List<Certifications>();
-           // string connectionStrings = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Cerifications;Integrated Security=True;Connect Timeout=30;Encrypt=False";
-            string connectionStrings= "Data Source = .; Database = Certification;Integrated Security = sspi";
+            // string connectionStrings = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Cerifications;Integrated Security=True;Connect Timeout=30;Encrypt=False";
+            //You cab Also use you Azure DB as follows string _connection_string = Environment.GetEnvironmentVariable("SQLAZURECONNSTR_SQLConnectionString");
+            string connectionStrings = "Data Source = .; Database = Certification;Integrated Security = sspi";
             string statement = "SELECT CourseId, CourseName, Rating from Certifications";
             SqlConnection connection = new SqlConnection(connectionStrings);
             connection.Open();
